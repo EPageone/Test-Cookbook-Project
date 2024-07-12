@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegie Cookapp</title>
+</head>
+<body>
+    {% for ingredients in ingredients %}
+        {{ ingredients.recipe_name }}<br>
+        {{ ingredients.ingredients_list }}<br>
+        {{ ingredients.recipe_description }}<br>
+    {% endfor %}
+</body>
+</html>
