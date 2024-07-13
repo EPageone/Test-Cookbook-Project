@@ -25,6 +25,7 @@ def get_ingredients():
     return render_template("ingredients.html", ingredients=ingredients)
 
 
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -99,7 +100,13 @@ def logout():
     return redirect(url_for("login"))
 
 
+@app.route("/add_recipe")
+def add_recipe():
+    return render_template("add_recipe.html")
+
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
-            port=int(os.environ.get("PORT")),
-            debug=True)
+        port=int(os.environ.get("PORT")),
+        debug=True)
