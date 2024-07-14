@@ -117,6 +117,14 @@ def add_recipe():
     return render_template("add_recipe.html", recipes=recipes)
 
 
+@app.route("/edit_recipe/<ingredients_id>", methods=["GET", "POST"])
+def edit_recipe(ingredients_id):
+    ingredients = mongo.db.ingredients.find_one({"_id": ObjectId(ingredients_id)})
+    recipes = mongo.db.recipes.find().sort("recipe_name", 1)
+    return render_template("edit_recipe.html", recipe=recipes, recipes=recipes)
+
+
+
 
 
 
