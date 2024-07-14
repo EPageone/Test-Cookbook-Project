@@ -1,22 +1,23 @@
 {% extends "base.html" %}
-{% block content %} 
+{% block content %}
 
-        <ul class="collapsible">
-            {% for ingredients in ingredients %}
-            <li>
-            <div class="collapsible-header white-text purple darken-4 text-shadow">
-                <i class="fas fa-carfaet-down"></i>
-            <strong>{{ ingredients.recipe_name }}</strong> : {{ ingredients.ingredients_list }}
+    <h3 class="light-purple text-darken-4 center-align">All Recipes</h3>
+
+    <ul class="collapsible">
+        {% for ingredients in ingredients %}
+        <li>
+            <div class="collapsible-header black-text dark-purple">
+                <i class="fas fa-caret-down"></i>
+                <strong>{{ ingredients.recipe_name }}</strong> : {{ ingredients.ingredients_list }}
+                
             </div>
             <div class="collapsible-body">
-            <strong>
+               
                 <p>{{ ingredients.recipe_description }}</p>
-            </strong>
-
-            
+                <p><em>by: {{ ingredients.created_by }}</em></p>
             </div>
-            </li>
-            {% endfor %}  
-        </ul>
+        </li>
+        {% endfor %}
+    </ul>
 
 {% endblock %}
