@@ -8,14 +8,11 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-folder-open prefix light-purple-text text-darken-4"></i>
-            <select>
-                <option value="" disabled selected>Choose your recipe</option>
-                <option value="1">Mexican-style Stuffed Peppers</option>
-                <option value="2">Mushroom Risotto</option>
-                <option value="3">Sweet Potato, Spinach and Lentil Dhal</option>
-                <option value="3">Pepper and Mushroom Hash</option>
-                <option value="3">Salsa</option>
-                <option value="3">Mushroom and Potato Curry</option>
+                <select id="recipe_name" name="recipe_name" class="validate" required>
+                    <option value="" disabled selected>Choose your recipe</option>
+                {% for recipe in recipes %}
+                    <option value="{{ recipe.recipe_name }}">{{ recipe.recipe_name }}</option>
+                {% endfor %}               
             </select>
             <label>Recipes</label>
   </div>
