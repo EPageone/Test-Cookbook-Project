@@ -7,6 +7,11 @@
         {% for ingredients in ingredients %}
         <li>
             <div class="collapsible-header black-text dark-purple">
+                <div class="col s3">
+                    <i class="fas fa-caret-down"></i>
+                    <a href="" class="btn-small purple accent-4">Done</a>
+                    <a href="" class="btn-small light-blue lighten-4">Edit</a>
+                </div>
                 <i class="fas fa-caret-down"></i>
                 <strong>{{ ingredients.recipe_name }}</strong> : {{ ingredients.ingredients_list }}
                 
