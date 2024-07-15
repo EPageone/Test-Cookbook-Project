@@ -121,7 +121,7 @@ def add_recipe():
 def edit_recipe(ingredients_id):
     ingredients = mongo.db.ingredients.find_one({"_id": ObjectId(ingredients_id)})
     recipes = mongo.db.recipes.find().sort("recipe_name", 1)
-    return render_template("edit_recipe.html", recipe=recipes, recipes=recipes)
+    return render_template("edit_recipe.html", ingredients=ingredients)
 
 
 
@@ -132,3 +132,9 @@ if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
         port=int(os.environ.get("PORT")),
         debug=True)
+
+
+
+
+
+
